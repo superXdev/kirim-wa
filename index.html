@@ -4,8 +4,64 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kirim Pesan Whatsapp instan!</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-3.7.0.min.js"></script>
+	<style>
+		.top-border-green {
+			border-top: 0.23rem solid #21c229;
+		}
+		body {
+			background: #f7f9fa;
+		}
+	</style>
 </head>
-<body>
-	
+<body class="container">
+	<div class="h3 py-4 text-center">
+		Kirim Pesan <img src="wa.png" style="margin-left: 2px;" alt="Whatsapp" width="30">
+	</div>
+	<div class="row justify-content-center mt-0 pt-0">
+		<div class="col-md-6">
+			<div class="card top-border-green">
+				<div class="card-body">
+					<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="pills-single-tab" data-bs-toggle="pill" data-bs-target="#pills-single" type="button" role="tab" aria-controls="pills-single" aria-selected="true">Single</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="pills-multi-tab" data-bs-toggle="pill" data-bs-target="#pills-multi" type="button" role="tab" aria-controls="pills-multi" aria-selected="false">Multiple</button>
+						</li>
+					</ul>
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pills-single" role="tabpanel" aria-labelledby="pills-single-tab">
+							<div class="form-group mb-3">
+								<label for="" class="mb-1">Nomor</label>
+								<input type="text" class="form-control" name="nomor" placeholder="628xxxxxxxx">
+							</div>
+							<div class="form-group">
+								<label for="pesan" class="mb-1">Pesan</label>
+								<textarea name="pesan" cols="30" rows="5" class="form-control" placeholder="isi pesan.."></textarea>
+							</div>
+							<button type="button" id="single" class="btn btn-success btn-sm mt-3 px-3"><i class="fas fa-paper-plane"></i> <span style="margin-left: 3px;">Kirim</span></button>
+						</div>
+						<div class="tab-pane fade" id="pills-multi" role="tabpanel" aria-labelledby="pills-multi-tab">
+							<div class="form-group mb-3">
+								<label for="list-nomor" class="mb-1">List Nomor</label>
+								<textarea name="list-nomor" cols="30" rows="5" class="form-control" placeholder="628xxxxxxxx&#10;628xxxxxxxx"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="pesan_multi" class="mb-1">Pesan</label>
+								<textarea name="pesan_multi" cols="30" rows="3" class="form-control" placeholder="isi pesan.."></textarea>
+							</div>
+							<button type="button" id="multi" class="btn btn-success btn-sm mt-3 px-3"><i class="fas fa-check"></i> <span style="margin-left: 3px;">Done</span></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/script.js"></script>
 </body>
 </html>

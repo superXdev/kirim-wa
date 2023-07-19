@@ -1,11 +1,15 @@
 
 let otherVal = [];
+let remIm = false;
 
 const sentElement = (nomor, pesan, opt) => {
 	let msg = pesan;
-	for(let i = 0; i < opt.length; i++) {
-		const mark = i + 1;
-		msg = msg.replaceAll('$'+mark.toString(), opt[i]);
+	
+	if(opt) {
+		for(let i = 0; i < opt.length; i++) {
+			const mark = i + 1;
+			msg = msg.replaceAll('$'+mark.toString(), opt[i]);
+		}
 	}
 
 	return `
@@ -14,7 +18,7 @@ const sentElement = (nomor, pesan, opt) => {
 				<div class="d-flex justify-content-between">
 					<div><b>${nomor}</b></div>
 					<div>
-						<a class="btn btn-sm btn-success" 
+						<a class="btn btn-sm btn-success sent" 
 						href="whatsapp://send/?phone=${nomor}&text=${msg}&type=phone_number&app_absent=0">
 						<i class="fas fa-paper-plane"></i>
 						</a>
@@ -45,6 +49,16 @@ $('#multi').click(function() {
 	});
 
 	$('#target').html(el);
+});
+
+$('[name="remove"]').change(function() {
+	remIm = $(this).is(':checked');
+});
+
+$('#target').on('click', '.sent', function(e) {
+	if(remIm) {
+		$(this).parent().parent().parent().parent('.card').remove();
+	}
 });
 
 const ExcelToJSON = function() {

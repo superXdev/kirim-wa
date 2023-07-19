@@ -74,6 +74,7 @@ const ExcelToJSON = function() {
 			workbook.SheetNames.forEach(function(sheetName) {
 				const XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
 				const numberList = JSON.parse(JSON.stringify(XL_row_object));
+				// console.log(numberList)
 
 				let numbers = [];
 				for (i = 0; i < numberList.length; i++) {
@@ -89,8 +90,10 @@ const ExcelToJSON = function() {
 
 					otherVal.push(values);
 				}
-				// console.log(otherVal)
-				$('[name="list-nomor"]').val(numbers.join('\n'));
+				if(numbers.length > 0) {
+					$('[name="list-nomor"]').val(numbers.join('\n'));
+				}
+				
 			});
 		}
 

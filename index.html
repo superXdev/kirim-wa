@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery-3.7.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.0/dist/xlsx.full.min.js"></script>
 	<style>
 		.top-border-green {
 			border-top: 0.23rem solid #21c229;
@@ -47,8 +48,12 @@
 						</div>
 						<div class="tab-pane fade" id="pills-multi" role="tabpanel" aria-labelledby="pills-multi-tab">
 							<div class="form-group mb-3">
+								<label for="" class="mb-1">Import Excel</label>
+								<input type="file" id="excelFile" class="form-control">
+							</div>
+							<div class="form-group mb-3">
 								<label for="list-nomor" class="mb-1">List Nomor</label>
-								<textarea name="list-nomor" cols="30" rows="5" class="form-control" placeholder="628xxxxxxxx&#10;628xxxxxxxx"></textarea>
+								<textarea name="list-nomor" cols="30" rows="5" class="form-control" placeholder="628xxxxxxxx&#10;08xxxxxxxx"></textarea>
 							</div>
 							<div class="form-group">
 								<label for="pesan_multi" class="mb-1">Pesan</label>
@@ -59,6 +64,63 @@
 						</div>
 					</div>
 					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center mt-4 mb-5">
+		<h4 class="py-2 text-center">FAQ</h4>
+		<div class="col-md-6">
+			<div class="accordion" id="accordionFaq">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headFaq1">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+						Apa fungsi dari web ini?
+						</button>
+					</h2>
+					<div id="faq1" class="accordion-collapse collapse" aria-labelledby="headFaq1" data-bs-parent="#accordionFaq">
+						<div class="accordion-body">Web ini dirancang untuk membantu Anda mengirim pesan WhatsApp ke nomor-nomor tertentu tanpa harus menyimpannya terlebih dahulu di kontak telepon.</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headFaq2">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+						Apakah mengirim pesan melalui web ini gratis?
+						</button>
+					</h2>
+					<div id="faq2" class="accordion-collapse collapse" aria-labelledby="headFaq2" data-bs-parent="#accordionFaq">
+						<div class="accordion-body">Ya, pengiriman pesan melalui web ini tidak mengenakan biaya tambahan.</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headFaq3">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+						Bagaimana cara mengirim pesan ke nomor WhatsApp?
+						</button>
+					</h2>
+					<div id="faq3" class="accordion-collapse collapse" aria-labelledby="headFaq3" data-bs-parent="#accordionFaq">
+						<div class="accordion-body">Masukkan nomor tujuan dengan kode negara (misalnya +62 untuk Indonesia) di kotak yang disediakan, lalu ketik pesan Anda dan klik tombol "Kirim". Pesan akan dikirimkan ke nomor WhatsApp yang ditentukan.</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headFaq4">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+						Apakah pesan yang saya kirimkan akan disimpan di server?
+						</button>
+					</h2>
+					<div id="faq4" class="accordion-collapse collapse" aria-labelledby="headFaq4" data-bs-parent="#accordionFaq">
+						<div class="accordion-body">Tidak, pesan yang Anda kirimkan melalui web ini tidak akan disimpan di server kami. Setelah pesan dikirimkan, data pesan akan dihapus.</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headFaq5">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+						Bisakah saya mengirim pesan ke beberapa nomor sekaligus?
+						</button>
+					</h2>
+					<div id="faq5" class="accordion-collapse collapse" aria-labelledby="headFaq5" data-bs-parent="#accordionFaq">
+						<div class="accordion-body">Ya, Anda dapat memasukkan beberapa nomor tujuan yang dipisahkan oleh baris baru, untuk mengirim pesan ke beberapa nomor sekaligus</div>
+					</div>
 				</div>
 			</div>
 		</div>
